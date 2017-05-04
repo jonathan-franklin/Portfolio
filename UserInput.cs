@@ -1,4 +1,15 @@
-﻿using System.Collections;
+﻿// File Prologue
+// Name: Jonathan Franklin
+// Project: Calculator Command
+// Date: April 2017
+
+// I declare that the following source code was written by me, or provided
+// by the instructor for this project. I understand that copying 
+// source code from any other source constitutes cheating, and that I will
+// receive a zero grade on this project if I am found in violation of
+// this policy.
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -273,6 +284,7 @@ public class UserInput : MonoBehaviour
                 moduloButton.GetComponent<Button>().interactable = false;
             }
         }
+        // This block does calculations and resets values when the enter button is pressed.
         else if (numberClicked == "Enter" && inputOne != 0 && inputTwo == 0 && currentOperator == "+" && currentInput != 0)
         {
             inputTwo = currentInput;
@@ -286,13 +298,15 @@ public class UserInput : MonoBehaviour
 
             newString = "" + result;
             resultAchieved = true;
-
+            
+            // This block checks whether the user's input was correct, and resets the target if so.
             if (newString == target.text)
             {
                 targetObject.GetComponent<TargetBehavior>().targetReset();
                 pointCounter.GetComponent<PointCounter>().addPoints();
             }
         }
+        // This block does calculations and resets values when the enter button is pressed.
         else if (numberClicked == "Enter" && inputOne != 0 && inputTwo == 0 && currentOperator == "-" && currentInput != 0)
         {
             inputTwo = currentInput;
@@ -307,12 +321,14 @@ public class UserInput : MonoBehaviour
             newString = "" + result;
             resultAchieved = true;
 
+            // This block checks whether the user's input was correct, and resets the target if so.
             if (newString == target.text)
             {
                 targetObject.GetComponent<TargetBehavior>().targetReset();
                 pointCounter.GetComponent<PointCounter>().addPoints();
             }
         }
+        // This block does calculations and resets values when the enter button is pressed.
         else if (numberClicked == "Enter" && inputOne != 0 && inputTwo == 0 && currentOperator == "*" && currentInput != 0)
         {
             inputTwo = currentInput;
@@ -327,12 +343,14 @@ public class UserInput : MonoBehaviour
             newString = "" + result;
             resultAchieved = true;
 
+            // This block checks whether the user's input was correct, and resets the target if so.
             if (newString == target.text)
             {
                 targetObject.GetComponent<TargetBehavior>().targetReset();
                 pointCounter.GetComponent<PointCounter>().addPoints();
             }
         }
+        // This block does calculations and resets values when the enter button is pressed.
         else if (numberClicked == "Enter" && inputOne != 0 && inputTwo == 0 && currentOperator == "/" && currentInput != 0)
         {
             inputTwo = currentInput;
@@ -347,12 +365,14 @@ public class UserInput : MonoBehaviour
             newString = "" + result;
             resultAchieved = true;
 
+            // This block checks whether the user's input was correct, and resets the target if so.
             if (newString == target.text)
             {
                 targetObject.GetComponent<TargetBehavior>().targetReset();
                 pointCounter.GetComponent<PointCounter>().addPoints();
             }
         }
+        // This block does calculations and resets values when the enter button is pressed.
         else if (numberClicked == "Enter" && inputOne != 0 && inputTwo == 0 && currentOperator == "%" && currentInput != 0)
         {
             inputTwo = currentInput;
@@ -367,12 +387,14 @@ public class UserInput : MonoBehaviour
             newString = "" + result;
             resultAchieved = true;
 
+            // This block checks whether the user's input was correct, and resets the target if so.
             if (newString == target.text)
             {
                 targetObject.GetComponent<TargetBehavior>().targetReset();
                 pointCounter.GetComponent<PointCounter>().addPoints();
             }
         }
+        // This block resets values when the enter button is pressed before an operator is used.
         else if ((numberClicked == "Enter" && currentInput == 0) || currentOperator == "")
         {
             inputOne = 0;
@@ -383,6 +405,7 @@ public class UserInput : MonoBehaviour
             newString = "";
         }
 
+        // This statement updates the input field's text value to reflect the current user input.
         functionInputField.text = newString;
     }
 
